@@ -52,7 +52,7 @@ module "ecs" {
 }
 
 module "frontend" {
-  source = "./Frontend/frontend"
+  source = "./Frontend"
 
 }
 
