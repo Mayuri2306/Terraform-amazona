@@ -1,25 +1,20 @@
-name: Terraform Infrastructure Deploy
+name: Terraform Destroy
 
 on:
-  push:
-    branches:
-      - main
+  workflow_dispatch:
 
 env:
   AWS_REGION: us-west-2
 
-
 jobs:
-  terraform:
+  destroy:
     runs-on: ubuntu-latest
 
     steps:
 
-    
     - name: Checkout Code
       uses: actions/checkout@v3
 
-    
     - name: Configure AWS Credentials
       uses: aws-actions/configure-aws-credentials@v2
       with:
@@ -27,18 +22,11 @@ jobs:
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws-region: ${{ env.AWS_REGION }}
 
-
-    
     - name: Setup Terraform
       uses: hashicorp/setup-terraform@v2
 
-    
     - name: Terraform Init
       run: terraform init
 
-
-    - name: Terraform Plan
-      run: terraform plan 
-
-    - name: Terraform Apply
-      run: terraform apply -auto-approve 
+    - name: Terraform Destroy
+      run: terraform destroy -auto-approve 
