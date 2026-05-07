@@ -46,3 +46,8 @@ jobs:
       run: |
         terraform apply -auto-approve \
         -var="image_url=${{ secrets.IMAGE_URL }}"
+        
+    - name: Terraform Destroy
+      run: |
+        terraform destroy -auto-approve \
+        -var="image_url=${{ secrets.IMAGE_URL }}"
