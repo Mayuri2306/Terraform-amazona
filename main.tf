@@ -9,14 +9,14 @@ module "vpc" {
 }
 
 module "alb_sg" {
-  source = "backend/alb_sg"
+  source = "./backend/alb_sg"
 
   vpc_id = module.vpc.vpc_output
 }
 
 
 module "sg" {
-  source = "backend/sg"
+  source = "./backend/sg"
 
   vpc_id = module.vpc.vpc_output
 
@@ -24,11 +24,11 @@ module "sg" {
 }
 
 module "iam" {
-  source = "backend/iam"
+  source = "./backend/iam"
 }
 
 module "alb" {
-  source = "backend/alb"
+  source = "./backend/alb"
 
   vpc_id          = module.vpc.vpc_output
   public_subnets  = module.vpc.public_subnets
@@ -38,7 +38,7 @@ module "alb" {
 }
 
 module "ecs" {
-  source = "backend/ecs"
+  source = "./backend/ecs"
 
   image_url      = var.image_url
   container_port = var.container_port
