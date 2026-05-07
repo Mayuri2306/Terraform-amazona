@@ -55,7 +55,7 @@ module "ecr" {
   source = "./Backend/ecr"
 }
 
-module "frontend" {
+module "Frontend" {
   source = "./Frontend"
 
 }

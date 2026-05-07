@@ -33,7 +33,3 @@ resource "aws_cloudfront_distribution" "s3_distribution" {
 }
 
 
-module "frontend" {
-  source = "./frontend"
-
-}
