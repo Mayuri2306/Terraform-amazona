@@ -23,12 +23,12 @@ module "sg" {
   alb_sg_id = module.alb_sg.alb_sg_id
 }
 
-module "iam" {
-  source = "./Backend/iam"
+module "IAM" {
+  source = "./Backend/IAM"
 }
 
-module "alb" {
-  source = "./Backend/alb"
+module "ALB" {
+  source = "./Backend/ALB"
 
   vpc_id          = module.vpc.vpc_output
   public_subnets  = module.vpc.public_subnets
@@ -46,13 +46,13 @@ module "ecs" {
   execution_role_arn = module.iam.execution_role_arn
 
   private_subnets = module.vpc.private_subnets
-  sg_id           = module.sg.sg_id
+  backend_sg_id = module.sg.sg_id
 
   target_group_arn = module.alb.target_group_arn
 }
 
 module "frontend" {
-  source = "./Frontend"
+  source = "./Frontend/frontend"
 
 }
 
