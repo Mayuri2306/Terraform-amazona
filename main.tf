@@ -51,6 +51,10 @@ module "ecs" {
   target_group_arn = module.ALB.target_group_arn
 }
 
+module "ecr" {
+  source = "./Backend/ecr"
+}
+
 module "frontend" {
   source = "./Frontend"
 
