@@ -4,6 +4,4 @@ variable "public_subnets" {}
 
 variable "alb_sg_id" {}
 
-variable "container_port" {
-  default = 4000
-}
+variable "container_port" {}

@@ -43,12 +43,12 @@ module "ecs" {
   image_url      = var.image_url
   container_port = var.container_port
 
-  execution_role_arn = module.iam.execution_role_arn
+  execution_role_arn = module.IAM.execution_role_arn
 
   private_subnets = module.vpc.private_subnets
   backend_sg_id = module.sg.sg_id
 
-  target_group_arn = module.alb.target_group_arn
+  target_group_arn = module.ALB.target_group_arn
 }
 
 module "frontend" {
