@@ -1,12 +1,8 @@
 variable "image_url" {}
 
-variable "container_port" {
-  default = 4000
-}
+variable "container_port" {}
 
 variable "execution_role_arn" {}
-
-variable "task_role_arn" {}
 
 variable "private_subnets" {}
 
