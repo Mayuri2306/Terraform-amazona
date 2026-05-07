@@ -1,4 +1,6 @@
-variable "image_url" {}
+variable "image_url" {
+  default = "nginx:latest"
+}
 
 variable "container_port" {}
 
