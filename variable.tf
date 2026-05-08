@@ -10,9 +10,7 @@ variable "pri_sub_1_cidr" {}
 
 variable "pri_sub_2_cidr" {}
 
-variable "image_url" {
-    default = "nginx:latest"
-}
+variable "image_url" {}
 
 variable "container_port" {}
 

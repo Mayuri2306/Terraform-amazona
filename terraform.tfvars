@@ -13,3 +13,5 @@ pri_sub_2_cidr = "10.0.4.0/24"
 container_port = 4000
 
 bucket_name = "bucket-react-app-frontend"
+
+image_url = "519718528060.dkr.ecr.us-west-2.amazonaws.com/backend-application:latest"
