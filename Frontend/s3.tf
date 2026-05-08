@@ -12,6 +12,18 @@ resource "aws_s3_bucket_public_access_block" "public_access" {
 }
 
 
+resource "aws_s3_bucket_website_configuration" "static_web_host" {
+  bucket = aws_s3_bucket.frontend_bucket.id
+
+  index_document {
+    suffix = "index.html"
+  }
+
+  error_document {
+    key = "index.html"
+  }
+}
+
 
 resource "aws_s3_bucket_policy" "allow_read_access" {
   bucket = aws_s3_bucket.frontend_bucket.id
@@ -19,7 +31,7 @@ resource "aws_s3_bucket_policy" "allow_read_access" {
   policy = jsonencode({
 
     Version = "2012-10-17"
-
+    
     Statement = [{
       Effect = "Allow"
       Principal = "*"
