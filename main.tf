@@ -58,6 +58,9 @@ module "ecr" {
 module "Frontend" {
   source = "./Frontend"
 
+
+  bucket_name = var.bucket_name
+
 }
 
 

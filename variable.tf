@@ -15,3 +15,5 @@ variable "image_url" {
 }
 
 variable "container_port" {}
+
+variable "bucket_name" {}
