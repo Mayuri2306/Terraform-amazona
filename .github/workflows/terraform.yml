@@ -3,6 +3,8 @@ name: Terraform Infrastructure Deploy
 on:
   push:
 
+    branches:
+    - main
 env:
   AWS_REGION: us-west-2
 
