@@ -1,3 +1,3 @@
 variable "bucket_name" {}
 
-variable "alb_dns"
+variable "alb_dns" {}
