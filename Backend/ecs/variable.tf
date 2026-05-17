@@ -4,6 +4,8 @@ variable "container_port" {}
 
 variable "execution_role_arn" {}
 
+variable "task_role_arn" {}
+
 variable "private_subnets" {}
 
 variable "backend_sg_id" {}

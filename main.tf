@@ -45,6 +45,8 @@ module "ecs" {
 
   execution_role_arn = module.IAM.execution_role_arn
 
+  task_role_arn = module.IAM.task_role_arn
+
   private_subnets = module.vpc.private_subnets
   backend_sg_id = module.sg.sg_id
 
