@@ -18,7 +18,7 @@ resource "aws_cloudfront_distribution" "cdn_distribution" {
   }
 
   origin {
-    domain_name = aws_lb.app_alb.dns_name
+    domain_name = var.alb_dns
     origin_id   = "alb-origin"
 
     custom_origin_config {

@@ -60,6 +60,8 @@ module "ecr" {
 module "Frontend" {
   source = "./Frontend"
 
+  alb_dns = module.ALB.alb_dns
+
 
   bucket_name = var.bucket_name
 
