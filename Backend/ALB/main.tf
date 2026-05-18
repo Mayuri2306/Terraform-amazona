@@ -6,9 +6,6 @@ resource "aws_lb" "app_alb" {
   security_groups = [var.alb_sg_id]
   subnets         = var.public_subnets
 
-  tags = {
-    Name = "app-alb"
-  }
 }
 
 
@@ -26,10 +23,6 @@ resource "aws_lb_target_group" "app_tg" {
     timeout             = 5
     healthy_threshold   = 2
     unhealthy_threshold = 2
-  }
-
-  tags = {
-    Name = "app-tg"
   }
 }
 

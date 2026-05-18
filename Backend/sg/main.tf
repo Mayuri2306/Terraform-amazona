@@ -2,9 +2,6 @@ resource "aws_security_group" "backend_sg" {
   name   = "backend-sg"
   vpc_id = var.vpc_id
 
-   tags = {
-    Name = "backend-sg"
-  }
 
   ingress {
     from_port       = 4000
