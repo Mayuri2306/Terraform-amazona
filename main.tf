@@ -42,7 +42,7 @@ module "ALB" {
 module "ecs" {
   source = "./Backend/ecs"
 
-  image_url      = var.image_url
+  repo_url      = module.ecr.repo_url
   container_port = var.container_port
 
   execution_role_arn = module.IAM.execution_role_arn
