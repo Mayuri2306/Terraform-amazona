@@ -25,6 +25,8 @@ module "sg" {
 
 module "IAM" {
   source = "./Backend/IAM"
+
+  secret_arn = module.Database.secret_arn
 }
 
 module "ALB" {
@@ -51,6 +53,8 @@ module "ecs" {
   backend_sg_id = module.sg.sg_id
 
   target_group_arn = module.ALB.target_group_arn
+
+  secret_arn = module.Database.secret_arn
 }
 
 module "ecr" {
@@ -64,6 +68,11 @@ module "Frontend" {
 
 
   bucket_name = var.bucket_name
+
+}
+
+module "Database" {
+  source = "./Database"
 
 }
 

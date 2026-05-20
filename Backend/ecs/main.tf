@@ -15,13 +15,28 @@ resource "aws_ecs_task_definition" "task_def" {
 
   container_definitions = jsonencode([{
     name  = "backend"
-    image = var.image_url
+    image = "${var.repo_url}:latest"
 
     essential = true
 
     portMappings = [{
       containerPort = var.container_port
     }]
+
+    secrets = [
+
+    {
+      name      = "MONGO_URI"
+      valueFrom = "${var.secret_arn}:MONGO_URI::"
+    },
+
+    {
+      name      = "JWT_SECRET"
+      valueFrom = "${var.secret_arn}:JWT_SECRET::"
+    }
+
+  ]
+
   }])
 }
 

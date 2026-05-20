@@ -1,4 +1,4 @@
-variable "image_url" {}
+variable "repo_url" {}
 
 variable "container_port" {}
 
@@ -11,3 +11,5 @@ variable "private_subnets" {}
 variable "backend_sg_id" {}
 
 variable "target_group_arn" {}
+
+variable "secret_arn" {}

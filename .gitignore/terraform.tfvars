@@ -14,4 +14,17 @@ container_port = 4000
 
 bucket_name = "bucket-react-app-bucket"
 
-image_url = "519718528060.dkr.ecr.us-west-2.amazonaws.com/backend-application:latest"
+Org_name = "ecs-task-org"
+
+service_account_name = "ecs-org-sa"
+
+project_name = "ecs-project"
+
+cluter_name = "ecs-project-cluter"
+
+db_name = "ecs-database"
+
+db_username = "ecs-database-user"
+
+atlas_secret_name = "mongo-aws-secret"
+

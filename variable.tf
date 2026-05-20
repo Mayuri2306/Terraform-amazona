@@ -10,8 +10,21 @@ variable "pri_sub_1_cidr" {}
 
 variable "pri_sub_2_cidr" {}
 
-variable "image_url" {}
-
 variable "container_port" {}
 
 variable "bucket_name" {}
+
+variable "Org_name" {}
+
+variable "service_account_name" {}
+
+variable "project_name" {}
+
+variable "cluter_name" {}
+
+variable "db_username" {}
+
+variable "db_name" {}
+
+variable "atlas_secret_name" {}
+
