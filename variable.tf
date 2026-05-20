@@ -14,7 +14,7 @@ variable "container_port" {}
 
 variable "bucket_name" {}
 
-variable "Org_name" {}
+variable "org_name" {}
 
 variable "service_account_name" {}
 

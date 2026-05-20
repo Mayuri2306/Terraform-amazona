@@ -42,3 +42,12 @@ jobs:
 
     - name: Terraform Apply
       run: terraform apply -auto-approve 
+      env:
+        TF_VAR_org_name: ${{ secrets.ORG_NAME }}
+        TF_VAR_service_account_name: ${{ secrets.SA_NAME }}
+        TF_VAR_project_name: ${{ secrets.PROJECT_NAME }}
+        TF_VAR_cluster_name: ${{ secrets.CLUSTER_NAME }}
+        TF_VAR_aws_region: ${{ env.AWS_REGION }}
+        TF_VAR_db_username: ${{ secrets.DB_USERNAME }}
+        TF_VAR_db_name: ${{ secrets.DB_NAME }}
+        TF_VAR_atlas_secret_name: ${{ secrets.ATLAS_SECRET_NAME }}

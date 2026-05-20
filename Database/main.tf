@@ -1,6 +1,6 @@
 resource "mongodbatlas_organization" "ecs_task_org" {
   
-  name = var.Org_name
+  name = var.org_name
 
   service_account {
     name                       = var.service_account_name
