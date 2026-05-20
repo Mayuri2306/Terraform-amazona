@@ -4,7 +4,7 @@ variable "service_account_name" {}
 
 variable "project_name" {}
 
-variable "cluter_name" {}
+variable "cluster_name" {}
 
 variable "aws_region" {}
 

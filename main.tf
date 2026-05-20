@@ -23,10 +23,26 @@ module "sg" {
   alb_sg_id = module.alb_sg.alb_sg_id
 }
 
+module "Database" {
+  source = "./Database"
+
+  org_name             = var.org_name
+  service_account_name = var.service_account_name
+  project_name         = var.project_name
+  cluster_name         = var.cluster_name
+  db_username          = var.db_username
+  db_name              = var.db_name
+  atlas_secret_name    = var.atlas_secret_name
+  aws_region           = var.aws_region
+}
+
 module "IAM" {
   source = "./Backend/IAM"
 
   secret_arn = module.Database.secret_arn
+
+  depends_on = [module.Database]
+
 }
 
 module "ALB" {
@@ -37,6 +53,10 @@ module "ALB" {
   alb_sg_id       = module.alb_sg.alb_sg_id
 
   container_port  = var.container_port
+}
+
+module "ecr" {
+  source = "./Backend/ecr"
 }
 
 module "ecs" {
@@ -57,10 +77,6 @@ module "ecs" {
   secret_arn = module.Database.secret_arn
 }
 
-module "ecr" {
-  source = "./Backend/ecr"
-}
-
 module "Frontend" {
   source = "./Frontend"
 
@@ -71,9 +87,6 @@ module "Frontend" {
 
 }
 
-module "Database" {
-  source = "./Database"
 
-}
 
 

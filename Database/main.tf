@@ -18,7 +18,7 @@ resource "mongodbatlas_project" "ecs_project" {
 
 resource "mongodbatlas_cluster" "ecs_cluster" {
   project_id                  = mongodbatlas_project.ecs_project.id
-  name                        = var.cluter_name
+  name                        = var.cluster_name
   provider_name               = "TENANT"   # Required for M0
   backing_provider_name       = "AWS"      # Cloud provider
   provider_region_name        = var.aws_region
