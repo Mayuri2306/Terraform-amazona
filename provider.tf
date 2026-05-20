@@ -11,9 +11,6 @@ terraform {
   }
 }
 
-provider "mongodbatlas" {
-  
-}
 
 terraform {
   backend "s3" {
